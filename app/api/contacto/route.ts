@@ -101,7 +101,7 @@ export async function POST(request: Request) {
  */
 async function enviarCorreo(asunto: string, cuerpo: string, replyTo: string) {
   const proveedor = process.env.EMAIL_PROVIDER || "log";
-  const from = process.env.MAIL_FROM || "Sitio Web Galeba <web@galeba.com.mx>";
+  const from = process.env.MAIL_FROM || "Sitio Web Galeba <gerencia@galeba.com>";
   // Las cotizaciones del sitio llegan únicamente a gerencia.
   const destinatarios = [
     process.env.MAIL_TO_GERENCIA || "gerencia@galeba.com",

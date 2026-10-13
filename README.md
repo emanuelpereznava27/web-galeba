@@ -36,7 +36,7 @@ cp .env.example .env.local
 | `EMAIL_PROVIDER` | `resend` \| `smtp` \| `log` | `log` |
 | `RESEND_API_KEY` | API key de Resend | — |
 | `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASS` / `SMTP_SECURE` | Servidor SMTP (Nodemailer) | — |
-| `MAIL_FROM` | Remitente del formulario | `Sitio Web Galeba <web@galeba.com.mx>` |
+| `MAIL_FROM` | Remitente del formulario | `Sitio Web Galeba <gerencia@galeba.com>` |
 | `MAIL_TO_GERENCIA` | Destinatario de cotizaciones | `gerencia@galeba.com` |
 | `MAIL_TO_OPERACIONES` | Copia opcional a operaciones (vacío = solo gerencia) | vacío |
 | `NEXT_PUBLIC_GA_ID` | ID de Google Analytics 4 (opcional) | vacío |
