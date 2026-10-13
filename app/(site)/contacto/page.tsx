@@ -10,7 +10,7 @@ import { company, mailtoLink, waLink } from "@/data/company";
 export const metadata: Metadata = {
   title: "Contacto | Solicita tu cotización",
   description:
-    "Contacta a Logistics Galeba para cotizar transporte de carga: gerencia y operaciones. Envía tu solicitud por correo o por WhatsApp.",
+    "Contacta a Logistics Galeba para cotizar transporte de carga. Envía tu solicitud por correo o por WhatsApp.",
   alternates: { canonical: "/contacto" },
 };
 
@@ -23,12 +23,6 @@ const departamentos = [
     Icono: Building2,
     correo: company.contactos.gerencia.correo,
     whatsapp: company.contactos.gerencia.whatsapp,
-  },
-  {
-    nombre: "Operaciones",
-    Icono: MessageCircle,
-    correo: company.contactos.operaciones.correo,
-    whatsapp: company.contactos.operaciones.whatsapp,
   },
 ];
 

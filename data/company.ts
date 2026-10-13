@@ -45,11 +45,6 @@ export const company = {
       correo: "gerencia@galeba.com",
       whatsapp: ["722 492 4070"],
     },
-    operaciones: {
-      correo: "operaciones@galeba.com",
-      // Los números de WhatsApp de Operaciones se retiraron a petición del cliente.
-      whatsapp: [] as string[],
-    },
   },
 
   /**

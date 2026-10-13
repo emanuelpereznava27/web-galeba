@@ -61,14 +61,6 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href={mailtoLink(company.contactos.operaciones.correo)}
-                className="transition-colors hover:text-white"
-              >
-                {company.contactos.operaciones.correo}
-              </a>
-            </li>
-            <li>
-              <a
                 href={waLink(
                   company.contactos.gerencia.whatsapp[0],
                   "Hola, me interesa cotizar un servicio de transporte con Logistics Galeba"
