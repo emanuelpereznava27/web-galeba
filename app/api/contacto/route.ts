@@ -23,8 +23,7 @@ const schema = z.object({
 
 /* ── Rate limiting básico en memoria: máx. 5 envíos por IP por hora ── */
 const hits = new Map<string, number[]>();
-// TODO: temporal para diagnóstico, restablecer a 5.
-const LIMITE = 100;
+const LIMITE = 5;
 const VENTANA = 60 * 60 * 1000;
 
 function excedeLimite(ip: string): boolean {
@@ -90,11 +89,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("[contacto] Error al enviar correo:", error);
     return NextResponse.json(
-      {
-        error: "No pudimos enviar tu solicitud. Intenta por WhatsApp o correo.",
-        // TODO: temporal para diagnóstico, quitar luego.
-        detalle: String(error),
-      },
+      { error: "No pudimos enviar tu solicitud. Intenta por WhatsApp o correo." },
       { status: 500 }
     );
   }
