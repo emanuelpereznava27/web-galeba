@@ -116,7 +116,12 @@ async function enviarCorreo(asunto: string, cuerpo: string, replyTo: string) {
       ? "resend"
       : "log";
 
-  const from = process.env.MAIL_FROM || "Sitio Web Galeba <gerencia@galeba.com>";
+  const from =
+    process.env.MAIL_FROM ||
+    (proveedor === "resend"
+      ? // Con Resend sin dominio verificado, el remitente debe ser el de prueba.
+        "Sitio Web Galeba <onboarding@resend.dev>"
+      : "Sitio Web Galeba <gerencia@galeba.com>");
   // Las cotizaciones del sitio llegan únicamente a gerencia.
   const destinatarios = [
     process.env.MAIL_TO_GERENCIA || "gerencia@galeba.com",
