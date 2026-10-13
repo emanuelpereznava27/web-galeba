@@ -121,12 +121,13 @@ async function enviarCorreo(asunto: string, cuerpo: string, replyTo: string) {
       ? "resend"
       : "log";
 
-  const from =
-    process.env.MAIL_FROM ||
-    (proveedor === "resend"
-      ? // Con Resend sin dominio verificado, el remitente debe ser el de prueba.
-        "Sitio Web Galeba <onboarding@resend.dev>"
-      : "Sitio Web Galeba <gerencia@galeba.com>");
+  // Remitente. Para Resend se usa RESEND_FROM; mientras galeba.com.mx no esté
+  // verificado en Resend, el remitente debe ser el de prueba (onboarding@resend.dev).
+  // Para SMTP se usa MAIL_FROM. Así una MAIL_FROM vieja no rompe a Resend.
+  const fromResend =
+    process.env.RESEND_FROM || "Sitio Web Galeba <onboarding@resend.dev>";
+  const fromSmtp =
+    process.env.MAIL_FROM || "Sitio Web Galeba <gerencia@galeba.com>";
   // Las cotizaciones del sitio llegan únicamente a gerencia.
   const destinatarios = [
     process.env.MAIL_TO_GERENCIA || "gerencia@galeba.com",
@@ -142,7 +143,7 @@ async function enviarCorreo(asunto: string, cuerpo: string, replyTo: string) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from,
+        from: fromResend,
         to: destinatarios,
         subject: asunto,
         text: cuerpo,
@@ -166,7 +167,7 @@ async function enviarCorreo(asunto: string, cuerpo: string, replyTo: string) {
       },
     });
     await transporter.sendMail({
-      from,
+      from: fromSmtp,
       to: destinatarios.join(", "),
       subject: asunto,
       text: cuerpo,
