@@ -1,0 +1,24 @@
+# Dependencias
+node_modules/
+.next/
+out/
+build/
+
+# Entorno
+.env
+.env.local
+.env*.local
+
+# Sistema
+.DS_Store
+*.pem
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Vercel
+.vercel
+
+# TypeScript
+next-env.d.ts
+*.tsbuildinfo

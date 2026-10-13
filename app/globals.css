@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   DESIGN TOKENS — fuente única de verdad
+   ========================================================= */
+:root {
+  --azul-corporativo: #003f94;
+  --azul-profundo: #0a2a66;
+  --azul-medio: #2b7fe0;
+  --azul-claro: #e8f0fb;
+  --blanco: #ffffff;
+  --gris-texto: #3a4556;
+  --gris-borde: #d6deea;
+  --rojo-acento: #d62828;
+  --amarillo-acento: #f4c20d;
+  --verde-check: #2ea44f;
+
+  --ease-signature: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-soft: 0 8px 30px rgba(0, 63, 148, 0.12);
+  --shadow-lg: 0 20px 50px rgba(10, 42, 102, 0.18);
+  --overlay-azul: linear-gradient(135deg, rgba(10, 42, 102, 0.85), rgba(0, 63, 148, 0.55));
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white font-body text-gris-texto antialiased;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading text-azul-corporativo;
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+
+  /* Ancla bajo el header sticky */
+  :target,
+  [id] {
+    scroll-margin-top: 96px;
+  }
+
+  ::selection {
+    background: var(--azul-medio);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--azul-medio);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* =========================================================
+   COMPONENTES REUTILIZABLES
+   ========================================================= */
+@layer components {
+  .section {
+    padding-top: clamp(64px, 10vw, 128px);
+    padding-bottom: clamp(64px, 10vw, 128px);
+  }
+
+  /* ---------- Botones ---------- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill px-6 py-3
+      font-body text-sm font-semibold transition-all duration-200
+      min-h-[44px] select-none;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+  }
+  .btn-primary {
+    @apply bg-azul-corporativo text-white;
+  }
+  .btn-primary:hover {
+    @apply bg-azul-profundo;
+  }
+  .btn-white {
+    @apply bg-white text-azul-corporativo;
+  }
+  .btn-outline {
+    @apply border border-white/70 bg-transparent text-white;
+  }
+  .btn-outline:hover {
+    @apply bg-white/10;
+  }
+  .btn-line {
+    @apply border border-azul-corporativo/40 bg-transparent text-azul-corporativo;
+  }
+  .btn-line:hover {
+    @apply border-azul-corporativo bg-azul-claro;
+  }
+
+  /* ---------- Tarjetas ---------- */
+  .card {
+    @apply rounded-card border border-gris-borde bg-white p-6
+      transition-all duration-300;
+    box-shadow: var(--shadow-soft);
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--azul-medio);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* ---------- Etiquetas / píldoras ---------- */
+  .badge {
+    @apply inline-flex items-center gap-2 rounded-pill border border-white/25
+      bg-white/10 px-4 py-1.5 text-xs font-semibold text-white backdrop-blur-sm;
+  }
+  .pill {
+    @apply rounded-pill border border-azul-medio/30 bg-azul-claro px-4 py-2
+      text-sm font-semibold text-azul-corporativo transition-colors;
+  }
+  .pill:hover {
+    @apply border-azul-medio bg-white;
+  }
+
+  /* ---------- Campos de formulario ---------- */
+  .input {
+    @apply w-full rounded-field border border-gris-borde bg-white px-4 py-3
+      text-sm text-gris-texto transition-colors placeholder:text-gris-texto/50;
+  }
+  .input:focus {
+    @apply border-azul-medio outline-none;
+  }
+  .input-error {
+    @apply border-acento-rojo;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-azul-profundo;
+  }
+
+  /* ---------- Columna decorativa de 5 puntos ---------- */
+  .dot-rail {
+    @apply flex flex-col items-center gap-3;
+  }
+}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+
+/* Reveal on scroll (el componente <Reveal/> añade .is-visible) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease-signature), transform 0.6s var(--ease-signature);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Línea del tiempo: dibujo de carretera */
+.road-path {
+  stroke-dasharray: var(--road-length, 1200);
+  stroke-dashoffset: var(--road-length, 1200);
+  transition: stroke-dashoffset 1.6s var(--ease-signature);
+}
+.road-path.is-visible {
+  stroke-dashoffset: 0;
+}
+
+/* Accesibilidad: respeta reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .road-path {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Marquee de clientes */
+.marquee-track {
+  animation: marquee 34s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Borde punteado decorativo tipo carretera */
+.dotted-divider {
+  background-image: radial-gradient(circle, var(--azul-medio) 1.5px, transparent 1.6px);
+  background-size: 14px 3px;
+  background-repeat: repeat-x;
+  height: 3px;
+}

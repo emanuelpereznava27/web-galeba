@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Patio de tractocamiones (imagen provisional)">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A2A66"/>
+      <stop offset="1" stop-color="#003F94"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.18" fill="#ffffff">
+    <circle cx="1300" cy="180" r="90"/>
+  </g>
+  <!-- suelo -->
+  <rect y="620" width="1600" height="280" fill="#061B44"/>
+  <!-- fila de tractocamiones -->
+  <g fill="#E8F0FB" opacity="0.92">
+    <g transform="translate(120,470)">
+      <rect x="0" y="40" width="300" height="110" rx="10"/>
+      <rect x="310" y="70" width="120" height="80" rx="10" fill="#D62828"/>
+      <circle cx="70" cy="165" r="26" fill="#0A2A66" stroke="#F4C20D" stroke-width="6"/>
+      <circle cx="250" cy="165" r="26" fill="#0A2A66" stroke="#F4C20D" stroke-width="6"/>
+      <circle cx="380" cy="165" r="24" fill="#0A2A66" stroke="#F4C20D" stroke-width="6"/>
+    </g>
+    <g transform="translate(720,470)" opacity="0.9">
+      <rect x="0" y="40" width="300" height="110" rx="10"/>
+      <rect x="310" y="70" width="120" height="80" rx="10" fill="#D62828"/>
+      <circle cx="70" cy="165" r="26" fill="#0A2A66" stroke="#F4C20D" stroke-width="6"/>
+      <circle cx="250" cy="165" r="26" fill="#0A2A66" stroke="#F4C20D" stroke-width="6"/>
+      <circle cx="380" cy="165" r="24" fill="#0A2A66" stroke="#F4C20D" stroke-width="6"/>
+    </g>
+    <g transform="translate(1180,470)" opacity="0.75">
+      <rect x="0" y="40" width="300" height="110" rx="10"/>
+      <rect x="310" y="70" width="120" height="80" rx="10" fill="#D62828"/>
+      <circle cx="70" cy="165" r="26" fill="#0A2A66" stroke="#F4C20D" stroke-width="6"/>
+      <circle cx="250" cy="165" r="26" fill="#0A2A66" stroke="#F4C20D" stroke-width="6"/>
+      <circle cx="380" cy="165" r="24" fill="#0A2A66" stroke="#F4C20D" stroke-width="6"/>
+    </g>
+  </g>
+  <text x="800" y="120" fill="#ffffff" font-family="Arial, sans-serif" font-size="44" font-weight="700" text-anchor="middle" opacity="0.9">
+    Imagen provisional — reemplazar por foto real de la flota
+  </text>
+  <text x="800" y="170" fill="#E8F0FB" font-family="Arial, sans-serif" font-size="26" text-anchor="middle" opacity="0.75">
+    /public/img/hero-flota.jpg
+  </text>
+</svg>

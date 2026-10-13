@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Logistics Galeba">
+  <defs>
+    <linearGradient id="og" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A2A66"/>
+      <stop offset="1" stop-color="#003F94"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#og)"/>
+  <path d="M80 500 C300 430 900 430 1120 500" fill="none" stroke="#ffffff" stroke-width="6" stroke-dasharray="14 14" opacity="0.5"/>
+  <text x="600" y="250" fill="#ffffff" font-family="Arial, sans-serif" font-size="72" font-weight="800" text-anchor="middle" letter-spacing="2">
+    LOGISTICS GALEBA
+  </text>
+  <text x="600" y="330" fill="#E8F0FB" font-family="Arial, sans-serif" font-size="34" text-anchor="middle">
+    Transportamos más que carga, movemos tu éxito
+  </text>
+  <text x="600" y="410" fill="#2B7FE0" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">
+    Certificación OEA · CAAT · Monitoreo 24/7
+  </text>
+</svg>

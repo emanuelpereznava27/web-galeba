@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Camión en operación (imagen provisional)">
+  <rect width="800" height="600" fill="#E8F0FB"/>
+  <rect y="420" width="800" height="180" fill="#D6DEEA"/>
+  <g transform="translate(120,220)">
+    <rect x="0" y="60" width="360" height="140" rx="12" fill="#D62828"/>
+    <rect x="370" y="100" width="150" height="100" rx="12" fill="#0A2A66"/>
+    <rect x="395" y="120" width="45" height="40" rx="6" fill="#E8F0FB"/>
+    <circle cx="90" cy="205" r="34" fill="#0A2A66" stroke="#F4C20D" stroke-width="8"/>
+    <circle cx="300" cy="205" r="34" fill="#0A2A66" stroke="#F4C20D" stroke-width="8"/>
+    <circle cx="455" cy="205" r="30" fill="#0A2A66" stroke="#F4C20D" stroke-width="8"/>
+  </g>
+  <text x="400" y="540" fill="#3A4556" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">
+    Imagen provisional — reemplazar por foto real
+  </text>
+</svg>

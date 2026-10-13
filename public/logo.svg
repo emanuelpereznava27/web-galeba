@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Logistics Galeba">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#003F94"/>
+      <stop offset="1" stop-color="#0A2A66"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="url(#g)"/>
+  <circle cx="32" cy="32" r="31" fill="none" stroke="#2B7FE0" stroke-width="2"/>
+  <!-- carretera -->
+  <path d="M12 46 C22 40 42 40 52 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <!-- camión -->
+  <rect x="20" y="26" width="16" height="11" rx="1.5" fill="#F4C20D"/>
+  <rect x="36" y="30" width="9" height="7" rx="1.5" fill="#D62828"/>
+  <circle cx="24" cy="40" r="3" fill="#0A2A66" stroke="#F4C20D" stroke-width="1.5"/>
+  <circle cx="40" cy="40" r="3" fill="#0A2A66" stroke="#F4C20D" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="0" fill="none"/>
+</svg>
