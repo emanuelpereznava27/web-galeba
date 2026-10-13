@@ -100,7 +100,22 @@ export async function POST(request: Request) {
  * Proveedor por defecto: "log" (solo imprime en consola).
  */
 async function enviarCorreo(asunto: string, cuerpo: string, replyTo: string) {
-  const proveedor = process.env.EMAIL_PROVIDER || "log";
+  const pass = process.env.SMTP_PASS;
+  const resendKey = process.env.RESEND_API_KEY;
+  // Una clave real de Resend empieza con "re_" (ignora textos de ejemplo).
+  const resendValido = Boolean(resendKey && resendKey.startsWith("re_"));
+
+  // Si hay contraseña SMTP se usa SMTP (Gmail/Workspace por defecto); si no,
+  // Resend con una clave válida; si no, modo demo (log).
+  const proveedor =
+    process.env.EMAIL_PROVIDER === "log"
+      ? "log"
+      : pass
+      ? "smtp"
+      : resendValido
+      ? "resend"
+      : "log";
+
   const from = process.env.MAIL_FROM || "Sitio Web Galeba <gerencia@galeba.com>";
   // Las cotizaciones del sitio llegan únicamente a gerencia.
   const destinatarios = [
@@ -109,11 +124,11 @@ async function enviarCorreo(asunto: string, cuerpo: string, replyTo: string) {
     process.env.MAIL_TO_OPERACIONES,
   ].filter(Boolean) as string[];
 
-  if (proveedor === "resend" && process.env.RESEND_API_KEY) {
+  if (proveedor === "resend" && resendValido) {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        Authorization: `Bearer ${resendKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -130,13 +145,15 @@ async function enviarCorreo(asunto: string, cuerpo: string, replyTo: string) {
 
   if (proveedor === "smtp") {
     const nodemailer = (await import("nodemailer")).default;
+    // Por defecto Gmail (Google Workspace), que es el correo de Galeba.
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: process.env.SMTP_SECURE === "true",
-      auth: process.env.SMTP_USER
-        ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
-        : undefined,
+      host: process.env.SMTP_HOST || "smtp.gmail.com",
+      port: Number(process.env.SMTP_PORT || 465),
+      secure: (process.env.SMTP_SECURE || "true") === "true",
+      auth: {
+        user: process.env.SMTP_USER || "gerencia@galeba.com",
+        pass: pass as string,
+      },
     });
     await transporter.sendMail({
       from,
