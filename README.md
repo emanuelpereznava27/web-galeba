@@ -40,7 +40,7 @@ cp .env.example .env.local
 | `MAIL_TO_GERENCIA` | Destinatario de cotizaciones | `gerencia@galeba.com` |
 | `MAIL_TO_OPERACIONES` | Copia opcional a operaciones (vacío = solo gerencia) | vacío |
 | `NEXT_PUBLIC_GA_ID` | ID de Google Analytics 4 (opcional) | vacío |
-| `NEXT_PUBLIC_SITE_URL` | URL pública (sitemap/OG/JSON-LD) | `https://www.galeba.com.mx` |
+| `NEXT_PUBLIC_SITE_URL` | URL pública (sitemap/OG/JSON-LD) | `https://galeba.com.mx` |
 
 > Con `EMAIL_PROVIDER=log` el formulario **no envía correo**: sólo imprime la
 > solicitud en la consola del servidor. Es el modo ideal para demostración.
@@ -181,4 +181,4 @@ npm start
 
 ---
 
-© Logistics Galeba, S.A. de C.V. — www.galeba.com.mx
+© Logistics Galeba, S.A. de C.V. — galeba.com.mx

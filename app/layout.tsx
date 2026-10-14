@@ -5,7 +5,7 @@ import { company } from "@/data/company";
 import CookieConsent from "@/components/layout/CookieConsent";
 import Analytics from "@/components/layout/Analytics";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.galeba.com.mx";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://galeba.com.mx";
 
 const montserrat = Montserrat({
   subsets: ["latin"],

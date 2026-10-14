@@ -14,7 +14,7 @@ export const company = {
   nombreCorto: "Logistics Galeba",
   slogan: "Transportamos más que carga, movemos tu éxito",
   fundacion: 1998,
-  web: "www.galeba.com.mx",
+  web: "galeba.com.mx",
   mapsUrl: "https://maps.app.goo.gl/uLzuhwY6CJeYm2S49",
 
   // Descripciones cortas usadas en varias secciones

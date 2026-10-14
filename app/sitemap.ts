@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://www.galeba.com.mx";
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://galeba.com.mx";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const rutas: { ruta: string; prioridad: number }[] = [
