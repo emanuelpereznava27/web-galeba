@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ShieldCheck, ChevronDown, Award } from "lucide-react";
+import { ShieldCheck, ChevronDown } from "lucide-react";
 import { oeaIntro, estandares } from "@/data/oea";
 import { company } from "@/data/company";
 import Container from "@/components/ui/Container";
@@ -57,7 +57,7 @@ export default function OEA() {
                   <div
                     id={`panel-${est.id}`}
                     hidden={!isOpen}
-                    className="grid gap-6 border-t border-gris-borde px-5 py-5 md:grid-cols-[1.2fr_1fr]"
+                    className="border-t border-gris-borde px-5 py-5"
                   >
                     <ul className="space-y-2 text-sm text-gris-texto">
                       {est.puntos.map((punto) => (
@@ -67,13 +67,6 @@ export default function OEA() {
                         </li>
                       ))}
                     </ul>
-                    {/* Espacio para imagen de evidencia (placeholder) */}
-                    <div className="flex min-h-[140px] flex-col items-center justify-center rounded-card border border-dashed border-gris-borde bg-azul-claro/60 p-4 text-center">
-                      <Award className="h-8 w-8 text-azul-medio" aria-hidden="true" />
-                      <p className="mt-2 text-xs text-gris-texto/80">
-                        Imagen ilustrativa próximamente.
-                      </p>
-                    </div>
                   </div>
                 </div>
               </Reveal>
