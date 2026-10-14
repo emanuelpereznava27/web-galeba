@@ -56,7 +56,7 @@ app/
     page.tsx                 → Inicio
     nosotros/page.tsx        → Quiénes somos, historia, misión y visión
     servicios/page.tsx       → Servicios e infraestructura (flota)
-    certificaciones/page.tsx → OEA, 11 estándares y CAAT
+    certificaciones/page.tsx → OEA y CAAT
     clientes/page.tsx        → Clientes y cobertura
     contacto/page.tsx        → Contacto y formulario
     aviso-de-privacidad/page.tsx
@@ -85,7 +85,7 @@ de `/data`:
 - `data/company.ts` — datos de la empresa, contactos, historia, servicios, flota,
   clientes, permisos ambientales y ficha CAAT.
 - `data/flota.ts` — tipos de unidad, categorías de carga y descripciones.
-- `data/oea.ts` — introducción a la OEA y los 11 estándares.
+- `data/oea.ts` — introducción a la OEA y los estándares que se muestran.
 - `data/clientes.ts` — clientes, sectores y testimonio.
 - `data/cobertura.ts` — estados con permisos ambientales y sus coordenadas en el mapa.
 - `data/nav.ts` — menú de navegación.

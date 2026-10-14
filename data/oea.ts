@@ -1,6 +1,8 @@
 /**
- * Certificación OEA y los 11 estándares.
- * Contenido literal del documento corporativo.
+ * Certificación OEA y los estándares que se publican en el sitio.
+ * Contenido literal del documento corporativo. Se muestran solo 4 de los 11
+ * estándares (los más relevantes para el cliente): procesos, aduana, vehículos
+ * e incidentes.
  */
 
 export const oeaIntro =
@@ -15,47 +17,6 @@ export type Estandar = {
 export const estandares: Estandar[] = [
   {
     id: 1,
-    titulo: "Planeación de seguridad en la cadena de suministros",
-    puntos: [
-      "Análisis de riesgo",
-      "Políticas de seguridad",
-      "Auditorías internas en la cadena de suministros",
-      "Planes de contingencia o emergencia",
-    ],
-  },
-  {
-    id: 2,
-    titulo: "Seguridad física",
-    puntos: [
-      "Instalaciones",
-      "Accesos en puertas y casetas",
-      "Bardas perimetrales",
-      "Estacionamientos",
-      "Controles internos",
-      "Sistema CCTV",
-    ],
-  },
-  {
-    id: 3,
-    titulo: "Controles de acceso físico",
-    puntos: [
-      "Personal de seguridad de riesgo",
-      "Identificación de empleados, visitantes y proveedores",
-      "Procedimiento de identificación y retiro de personas o vehículos no autorizados",
-      "Entregas de mensajería y paquetería",
-    ],
-  },
-  {
-    id: 4,
-    titulo: "Socios comerciales",
-    puntos: [
-      "Criterios de selección",
-      "Requerimientos de seguridad",
-      "Revisiones al socio comercial",
-    ],
-  },
-  {
-    id: 5,
     titulo: "Seguridad de procesos",
     puntos: [
       "Mapeo de procesos",
@@ -64,7 +25,7 @@ export const estandares: Estandar[] = [
     ],
   },
   {
-    id: 6,
+    id: 2,
     titulo: "Gestión aduanera",
     puntos: [
       "Registro del Código Alfanumérico Armonizado del Transportista (CAAT)",
@@ -72,7 +33,7 @@ export const estandares: Estandar[] = [
     ],
   },
   {
-    id: 7,
+    id: 3,
     titulo:
       "Seguridad de los vehículos de carga, contenedores, remolques y/o semirremolques",
     puntos: [
@@ -82,48 +43,11 @@ export const estandares: Estandar[] = [
     ],
   },
   {
-    id: 8,
-    titulo: "Seguridad del personal",
-    puntos: [
-      "Verificación de antecedentes laborales",
-      "Procedimiento para baja del personal",
-      "Administración de personal",
-    ],
-  },
-  {
-    id: 9,
-    titulo: "Seguridad de la información y documentación",
-    puntos: [
-      "Clasificación y manejo de documentos",
-      "Seguridad de la Tecnología de la Información",
-    ],
-  },
-  {
-    id: 10,
-    titulo: "Capacitación en seguridad y concientización",
-    puntos: ["Capacitación y concientización sobre amenazas"],
-  },
-  {
-    id: 11,
+    id: 4,
     titulo: "Manejo e investigación de incidentes",
     puntos: [
       "Reporte de anomalías y/o actividades sospechosas",
       "Investigación y análisis",
     ],
   },
-];
-
-/** Versión corta para las píldoras que orbitan el diagrama OEA. */
-export const estandaresCortos: string[] = [
-  "Planeación de seguridad",
-  "Seguridad física",
-  "Controles de acceso",
-  "Socios comerciales",
-  "Seguridad de procesos",
-  "Gestión aduanera",
-  "Seguridad de vehículos",
-  "Seguridad del personal",
-  "Seguridad de la información",
-  "Capacitación",
-  "Manejo e investigación de incidentes",
 ];

@@ -4,9 +4,9 @@ import OEA from "@/components/sections/OEA";
 import CtaFinal from "@/components/sections/CtaFinal";
 
 export const metadata: Metadata = {
-  title: "Certificaciones | OEA, 11 estándares y CAAT",
+  title: "Certificaciones | OEA y CAAT",
   description:
-    "Certificación Operador Económico Autorizado (OEA), los 11 estándares de seguridad y el registro CAAT de Logistics Galeba.",
+    "Certificación Operador Económico Autorizado (OEA) y el registro CAAT de Logistics Galeba.",
   alternates: { canonical: "/certificaciones" },
 };
 
@@ -16,7 +16,7 @@ export default function CertificacionesPage() {
       <PageHeader
         eyebrow="Cumplimiento normativo"
         title="Certificaciones"
-        subtitle="Operador Económico Autorizado, estándares de seguridad y registro CAAT."
+        subtitle="Operador Económico Autorizado y registro CAAT."
         breadcrumb={[
           { label: "Inicio", href: "/" },
           { label: "Certificaciones" },

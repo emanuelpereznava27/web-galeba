@@ -2,31 +2,14 @@
 
 import { useState } from "react";
 import { ShieldCheck, ChevronDown, Award } from "lucide-react";
-import { oeaIntro, estandares, estandaresCortos } from "@/data/oea";
+import { oeaIntro, estandares } from "@/data/oea";
 import { company } from "@/data/company";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Reveal from "@/components/ui/Reveal";
 
-/** Posiciones radiales de las 11 píldoras alrededor del logo OEA. */
-function posicionRadial(i: number, total: number) {
-  const angulo = (-90 + i * (360 / total)) * (Math.PI / 180);
-  const radio = 44; // % del radio del contenedor
-  return {
-    left: `${50 + radio * Math.cos(angulo)}%`,
-    top: `${50 + radio * Math.sin(angulo)}%`,
-  };
-}
-
 export default function OEA() {
   const [abierto, setAbierto] = useState<number | null>(1);
-
-  const irA = (id: number) => {
-    setAbierto(id);
-    document
-      .getElementById(`estandar-${id}`)
-      ?.scrollIntoView({ behavior: "smooth", block: "center" });
-  };
 
   return (
     <section className="section">
@@ -39,55 +22,8 @@ export default function OEA() {
           />
         </Reveal>
 
-        {/* Diagrama radial (escritorio) */}
-        <Reveal className="mt-14 hidden lg:block">
-          <div className="relative mx-auto aspect-square w-full max-w-[720px]">
-            <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border-4 border-azul-claro bg-azul-profundo text-center text-white shadow-lg">
-              <ShieldCheck className="h-10 w-10 text-verde-check" aria-hidden="true" />
-              <span className="mt-1 font-heading text-xs font-bold uppercase leading-tight">
-                Operador
-                <br />
-                Económico
-                <br />
-                Autorizado México
-              </span>
-            </div>
-
-            {estandaresCortos.map((texto, i) => (
-              <button
-                key={texto}
-                type="button"
-                onClick={() => irA(i + 1)}
-                className="absolute -translate-x-1/2 -translate-y-1/2 rounded-pill border border-azul-medio/30 bg-azul-claro px-4 py-2 text-xs font-semibold text-azul-corporativo shadow-soft transition-transform hover:-translate-y-[calc(50%+2px)] hover:border-azul-medio hover:bg-white"
-                style={posicionRadial(i, estandaresCortos.length)}
-              >
-                <span className="mr-1 font-bold text-azul-medio">{i + 1}.</span>
-                {texto}
-              </button>
-            ))}
-          </div>
-        </Reveal>
-
-        {/* Grid (móvil) */}
-        <Reveal className="mt-10 lg:hidden">
-          <ul className="grid grid-cols-2 gap-3">
-            {estandaresCortos.map((texto, i) => (
-              <li key={texto}>
-                <button
-                  type="button"
-                  onClick={() => irA(i + 1)}
-                  className="h-full w-full rounded-card border border-gris-borde bg-azul-claro p-3 text-left text-xs font-semibold text-azul-corporativo"
-                >
-                  <span className="mr-1 font-bold text-azul-medio">{i + 1}.</span>
-                  {texto}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-
-        {/* Acordeón de los 11 estándares */}
-        <div className="mt-16 space-y-3">
+        {/* Acordeón de estándares */}
+        <div className="mt-14 space-y-3">
           {estandares.map((est) => {
             const isOpen = abierto === est.id;
             return (
@@ -175,9 +111,6 @@ export default function OEA() {
                   </dd>
                 </div>
               </dl>
-              <p className="mt-4 text-xs text-azul-claro/60">
-                Verificar formato de fecha con el cliente.
-              </p>
             </div>
           </div>
         </Reveal>
