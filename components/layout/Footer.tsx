@@ -13,12 +13,12 @@ export default function Footer() {
         {/* Marca */}
         <div>
           <Image
-            src="/logo-galeba-blanco.png"
+            src="/logo-grupo-rocha.png"
             alt={company.nombre}
-            width={255}
-            height={137}
+            width={500}
+            height={500}
             unoptimized
-            className="h-14 w-auto"
+            className="h-16 w-auto"
           />
           <p className="mt-4 text-sm text-azul-claro/85">{company.slogan}</p>
           <p className="mt-3 text-xs text-azul-claro/60">
