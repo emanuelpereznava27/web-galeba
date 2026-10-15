@@ -49,10 +49,6 @@ export default function AvisoPage() {
               </a>
               .
             </p>
-            <p className="rounded-card border border-dashed border-gris-borde bg-azul-claro/60 p-4 text-sm">
-              Documento de ejemplo. El texto legal definitivo debe ser revisado y aprobado por el
-              cliente antes de su publicación.
-            </p>
           </div>
         </Container>
       </section>
