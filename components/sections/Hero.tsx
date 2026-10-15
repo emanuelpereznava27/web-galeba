@@ -54,7 +54,7 @@ export default function Hero() {
       <div className="container relative mx-auto grid gap-10 py-28 lg:grid-cols-[1.2fr_1fr] lg:items-center">
         <div className="text-white">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-azul-claro/90">
-            {company.descripcionCorta} y logística
+            {company.descripcionCorta}
           </p>
           <h1 className="text-[clamp(2.4rem,6vw,4.5rem)] text-white">
             {company.nombreCorto}
